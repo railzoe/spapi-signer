@@ -60,3 +60,8 @@ def call_spapi(req: SPAPIRequest):
         "response": response.json() if response.content else {},
         "url": url
     }
+
+# ✅ Add this ping route at the very bottom
+@app.get("/ping")
+def ping():
+    return {"message": "pong"}
